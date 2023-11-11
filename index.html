@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Oswald:wght@400;500;700&family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h5 style="color: #fff;" class="text-center">Color Code Calculator</h5>
+    <section>
+        <h6 class="sub-title">Output : </h6>
+        <div class="outline">
+            <input class="Output-field" id="display-resistance" placeholder="Resistance :" type="text">
+            <input class="Output-field mt-2" id="display-Tolerance"placeholder="Tolerance : ±" type="text">
+            <input class="Output-field mt-2"id="display-TempCoeff" placeholder="Temp. Coeff :" type="text">
+        </div>
+    </section>
+    <section>
+        <div class="row d-flex  justify-content-between px-3">
+            <select name="Band" id="Band"
+                style="width: 10rem; height: 2rem; border-radius: 10px;background-color: green;border: none;">
+                <option value="4">4 band</option>
+                <option value="5">5 band</option>
+                <option value="6">6 band</option>
+            </select>
+            <button class="text-center" id="reloadBtn"
+                style="width: 10rem; height: 2rem; border-radius: 10px;background-color: green;border: none;">Reset</button>
+        </div>
+    </section>
+    <section>
+        <h6 class="sub-title mt-3">Input : </h6>
+        <div class="outline">
+            <label for="1st-digit" class="text-white mt-1">1st Digit :</label>
+            <select name="" id="1st-digit" style="background-color: brown;" class="Input-field">
+                <option value="1" style="background-color: brown;">1 Brown</option>
+                <option value="2" style="background-color: red;">2 Red</option>
+                <option value="3" style="background-color: orange;">3 Orange</option>
+                <option value="4" style="background-color: yellow;">4 Yellow</option>
+                <option value="5" style="background-color: green;">5 Green</option>
+                <option value="6" style="background-color: blue;">6 Blue</option>
+                <option value="7" style="background-color: violet;">7 Violet</option>
+                <option value="8" style="background-color: gray;">8 Gray</option>
+                <option value="9" style="background-color: white;">9 White</option>
+            </select>
+
+            <label for="2nd-digit" class="text-white mt-3">2nd Digit :</label>
+            <select name="" id="2nd-digit" style="background-color: black; color: white;" class="Input-field">
+                <option value="0" style="background-color: black; color: white">0 Black</option>
+                <option value="1" style="background-color: brown;">1 Brown</option>
+                <option value="2" style="background-color: red;">2 Red</option>
+                <option value="3" style="background-color: orange;">3 Orange</option>
+                <option value="4" style="background-color: yellow;">4 Yellow</option>
+                <option value="5" style="background-color: green;">5 Green</option>
+                <option value="6" style="background-color: blue;">6 Blue</option>
+                <option value="7" style="background-color: violet;">7 Violet</option>
+                <option value="8" style="background-color: gray;">8 Gray</option>
+                <option value="9" style="background-color: white; color: black;">9 White</option>
+            </select>
+
+            <label for="3rd-digit" class="text-white mt-3">3rd Digit :</label>
+            <select name="" id="3rd-digit" style="background-color: black; color: white;" class="Input-field">
+                <option value="0" style="background-color: black; color: white">0 Black</option>
+                <option value="1" style="background-color: brown;">1 Brown</option>
+                <option value="2" style="background-color: red;">2 Red</option>
+                <option value="3" style="background-color: orange;">3 Orange</option>
+                <option value="4" style="background-color: yellow;">4 Yellow</option>
+                <option value="5" style="background-color: green;">5 Green</option>
+                <option value="6" style="background-color: blue;">6 Blue</option>
+                <option value="7" style="background-color: violet;">7 Violet</option>
+                <option value="8" style="background-color: gray;">8 Gray</option>
+                <option value="9" style="background-color: white; color: black;">9 White</option>
+            </select>
+
+            <label for="Multiplier" class="text-white mt-3">Multipiler :</label>
+            <select name="" id="Multiplier" style="background-color: black; color: white;" class="Input-field">
+                <option value="1" style="background-color: black; color: white">x1 Black</option>
+                <option value="10" style="background-color: brown;">x10 Brown</option>
+                <option value="100" style="background-color: red;">x100 Red</option>
+                <option value="1000" style="background-color: orange;">x1000 Orange</option>
+                <option value="10000" style="background-color: yellow;">x10000 Yellow</option>
+                <option value="100000" style="background-color: green;">x100000 Green</option>
+                <option value="1000000" style="background-color: blue;">x1000000 Blue</option>
+                <option value="100000000" style="background-color: violet;">x10M Violet</option>
+                <option value="1000000000" style="background-color: gray;">x100M Gray</option>
+                <option value="10000000000" style="background-color: white;color: black ">x1G White</option>
+                <option value="0.1" style="background-color: gold;">x0.1 Gold</option>
+                <option value="0.01" style="background-color: silver;">x0.01 Silver</option>
+            </select>
+
+            <label for="Tolerance" class="text-white mt-3">Tolerance :</label>
+            <select name="" id="Tolerance" style="background-color: brown;" class="Input-field">
+                <option value="1" style="background-color: brown;">±1% Brown</option>
+                <option value="2" style="background-color: red;">±2% Red</option>
+                <option value="3" style="background-color: orange;">±3% Orange</option>
+                <option value="4" style="background-color: yellow;">±4% Yellow</option>
+                <option value="0.5" style="background-color: green;">±0.5% Green</option>
+                <option value="0.25" style="background-color: blue;">±0.25% Blue</option>
+                <option value="0.10" style="background-color: violet;">±0.10% Violet</option>
+                <option value="0.05" style="background-color: gray;">±0.05 Gray</option>
+                <option value="5" style="background-color: gold;">±5% Gold</option>
+                <option value="10" style="background-color: silver;">±10%Silver</option>
+            </select>
+
+            <label for="Temp-Coeff" class="text-white mt-3">Temp. Coeff:</label>
+            <select name="" id="Temp-Coeff" style="background-color: brown;" class="Input-field">
+                <option value="100" style="background-color: brown;">100 Brown</option>
+                <option value="50" style="background-color: red;">50 Red</option>
+                <option value="15" style="background-color: orange;">15 Orange</option>
+                <option value="25" style="background-color: yellow;">25 Yellow</option>
+                <option value="10" style="background-color: blue;">10 Blue</option>
+                <option value="5" style="background-color: violet;">5 Violet</option>
+
+            </select>
+        </div>
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
